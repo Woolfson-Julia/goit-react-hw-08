@@ -1,9 +1,10 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
-import { addContact } from '../../redux/contactsOps';
+import { addContact } from '../../redux/contacts/operations.js';
 import css from "./ContactForm.module.css"
+import ToastInfo from "../ToastInfo/ToastInfo.jsx";
 
 export default function ContactForm() {
   
@@ -27,38 +28,31 @@ export default function ContactForm() {
   });
   
   return (
-    <Formik
-      initialValues={{name: '', number: ''}}
-      onSubmit={handleSubmit}
-      validationSchema={UserSchema}
-    >
-      <Form className={css.form}>
-        <div className={css.container}>
-          <label className={css.text} htmlFor={`${fieldId}-name`}>
-            Name
-          </label>
-          <Field type="text" name="name" id={`${fieldId}-name`}></Field>
-          <ErrorMessage
-            className={css.span}
-            name="name"
-            component="span"
-          ></ErrorMessage>
-        </div>
-        <div className={css.container}>
-          <label className={css.text} htmlFor={`${fieldId}-number`}>
-            Number
-          </label>
-          <Field type="tel" name="number" id={`${fieldId}-number`}></Field>
-          <ErrorMessage
-            className={css.span}
-            name="number"
-            component="span"
-          ></ErrorMessage>
-        </div>
-        <button className={css.button} type="submit">
-          Add contact
-        </button>
-      </Form>
-    </Formik>
+    <>
+      <Formik
+        initialValues={{ name: "", number: "" }}
+        onSubmit={handleSubmit}
+        validationSchema={UserSchema}
+      >
+        <Form className={css.form}>
+          <div className={css.container}>
+            <label className={css.text} htmlFor={`${fieldId}-name`}>
+              Name
+            </label>
+            <Field type="text" name="name" id={`${fieldId}-name`}></Field>
+          </div>
+          <div className={css.container}>
+            <label className={css.text} htmlFor={`${fieldId}-number`}>
+              Number
+            </label>
+            <Field type="tel" name="number" id={`${fieldId}-number`}></Field>
+          </div>
+          <button className={css.button} type="submit">
+            Add contact
+          </button>
+        </Form>
+      </Formik>
+      <ToastInfo />
+    </>
   );
 }
