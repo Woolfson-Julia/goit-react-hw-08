@@ -4,11 +4,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const slice = createSlice({
   name: 'filters',
   initialState: {
-    name: ""
+    contactData: ""
   },
   reducers: {
     changeFilter: (state, action) => {
-      state.name = action.payload;
+      state.contactData = action.payload;
     }
   }
 })

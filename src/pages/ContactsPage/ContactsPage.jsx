@@ -10,11 +10,12 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import ContactList from "../../components/ContactList/ContactList";
 import Loader from "../../components/Loader/Loader";
-import css from './ContactsPage.module.css'
 import ToastInfo from "../../components/ToastInfo/ToastInfo";
+import css from "./ContactsPage.module.css";
 
 
 export default function ContactsPage() {
+  
   const dispatch = useDispatch();
 
   const contacts = useSelector(selectContacts);

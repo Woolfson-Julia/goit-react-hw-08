@@ -8,9 +8,11 @@ export default function ContactList() {
 
   const contacts = useSelector(selectFilteredContacts);
 
+  const sortedContacts = [...contacts].sort((a, b) => a.name.localeCompare(b.name));
+  
   return (
     <ul className={css.list}>
-      {contacts.map((contact) => (
+      {sortedContacts.map((contact) => (
         <li className={css.item} key={contact.id}>
           <Contact data={contact} />
         </li>

@@ -5,20 +5,29 @@
   width: 300px;
   margin-bottom: 20px;
 }
-
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;  
+}
 .text {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.71;
   color: #5f5050;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;  
+.input {
+  border-radius: 10px;
+  border: 1px solid #5f5050;
+  height: 34px;
+  padding: 6px;
+  text-overflow: ellipsis;
 }
-
+.span {
+  color: rgb(251, 49, 49);
+  font-size: 14px;
+  font-weight: 500;
+}
 .button {
   border-radius: 100px;
   width: 160px;
@@ -36,8 +45,4 @@
   background-color: #5f5050;
   color: #fae6cbf6;
 }
-.span {
-  color: rgb(251, 49, 49);
-  font-size: 14px;
-  font-weight: 500;
-}
+

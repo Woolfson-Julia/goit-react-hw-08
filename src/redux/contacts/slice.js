@@ -1,6 +1,6 @@
 import toast from 'react-hot-toast';
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from './operations';
+import { fetchContacts, addContact, deleteContact, changeContact } from './operations';
 import { logOut } from '../auth/operations';
 
 const slice = createSlice({
@@ -52,11 +52,28 @@ const slice = createSlice({
         state.loading = false;
         state.error = true;
         toast.error("Please reload there was an error!!!!");
-      }).addCase(logOut.fulfilled, state => {
+      })
+      .addCase(logOut.fulfilled, state => {
         state.items = [];
+      })
+      .addCase(changeContact.pending, state => {
+        state.loading = true;
+        state.error = null;  
+      })
+      .addCase(changeContact.fulfilled, (state, action) => {
+        state.loading = false;
+        const index = state.items.findIndex(item => item.id === action.payload.id);
+        if (index !== -1) {
+        state.items[index] = action.payload;
+        }
+        toast.success("Contact has been changed");
+      })
+      .addCase(changeContact.rejected, state => {
+        state.loading = false;
+        state.error = true;
+        toast.error("Please reload there was an error!!!!");
       })
   }
 })
-
 
 export default slice.reducer;

@@ -1,14 +1,10 @@
-import ClipLoader from "react-spinners/ClipLoader";
-import css from "./Loader.module.css"
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 export default function Loader() {
   return (
-    <div className={css.container}>
-      <ClipLoader
-        size={50}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
-    </div>
+    <Box sx={{ display: "flex" }}>
+      <CircularProgress />
+    </Box>
   );
 }

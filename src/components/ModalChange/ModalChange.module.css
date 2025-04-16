@@ -1,22 +1,22 @@
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 70px;
+.boxModal {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  gap: 10px;
   align-items: center;
-  width: 380px;
-  height: 420px;
-  background-color: rgba(254, 202, 125, 0.6);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  color: #f8f2ee;
+  text-align: center;
+  padding: 24px;
+  max-width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background-color:  #f8f2ee;
 }
-.title {
-  font-weight: 600;
-  font-size: 30px;
-  margin-bottom: 30px;
+.text {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.71;
   color: #5f5050;
 }
 .form {
@@ -25,14 +25,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
   width: 300px;
+}
+.containerForm {
+  margin-bottom: 20px;
 }
 .containerInput {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 4px;  
+  align-items: flex-start;
+  gap: 4px;
 }
 .label {
   display: flex;
@@ -46,17 +49,16 @@
 }
 .input {
   border-radius: 10px;
-  border: none;
-  height: 34px;
+  border: 2px solid  #5f5050;
   width: 300px;
   padding: 6px;
   outline: none;
-  background-color: #f8f2ee;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.5;
-  color: #5f5050;
   text-overflow: ellipsis;
+  color: #433434;
+  margin-bottom: 24px;
 }
 .input:focus {
   outline: none;
@@ -64,34 +66,28 @@
 }
 .span {
   position: absolute;
-  top: 62px;
+  top: 74px;
   color: rgb(251, 49, 49);
   font-size: 14px;
   font-weight: 500;
 }
+.containerButton {
+  display: flex;
+  gap: 20px;
+}
 .button {
   border-radius: 100px;
-  width: 160px;
-  height: 48px;
-  background-color: #feca7d;
-  border: none;
+  width: 80px;
+  height: 30px;
+  background-color: transparent;
+  border: 2px solid #feca7d;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   text-transform: uppercase;
   color: #5f5050;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
-  margin-bottom: 24px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1) ;
 }
 .button:hover {
-  background-color: #5f5050;
-  color: #fae6cbf6;
-}
-.text {
-  font-weight: 500;
-  font-size: 18px;
-  margin-bottom: 18px;
-  color: #5f5050;
-  margin-bottom: 12px;
-  max-width: 400px;
+  border: 2px solid #5f5050;
 }

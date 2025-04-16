@@ -9,3 +9,21 @@
   color: #5f5050;
   margin-bottom: 4px;
 }
+.input {
+  border-radius: 10px;
+  border: 1px solid #5f5050;
+  height: 34px;
+  padding: 6px;
+  width: 240px;
+}
+.containerInput {
+  position: relative;
+
+}
+.icon {
+  position: absolute;
+  top: 8px;
+  left: 212px;
+  color: #5f5050;
+}
+
